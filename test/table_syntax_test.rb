@@ -2,7 +2,7 @@ require "test_helper"
 require "table_syntax"
 
 class TableSyntaxTest < Minitest::Test
-  def test_that_it_has_a_version_number
+  def test_version
     refute_nil ::TableSyntax::VERSION
   end
 
