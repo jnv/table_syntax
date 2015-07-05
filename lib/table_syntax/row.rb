@@ -11,6 +11,7 @@ module TableSyntax
     def add_param(param)
       @params << param
     end
+    alias :<< :add_param
 
     def to_a
       @params

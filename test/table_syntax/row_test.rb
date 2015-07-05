@@ -19,5 +19,10 @@ module TableSyntax
       row.add_param(:param2)
       assert_equal [:param1, :param2], row.to_a
     end
+
+    def test_add_param_alias
+      row << :param2
+      assert_equal [:param1, :param2], row.to_a
+    end
   end
 end
