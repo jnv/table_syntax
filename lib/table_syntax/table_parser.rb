@@ -7,10 +7,21 @@ require 'unparser'
 require 'proc_to_ast'
 
 module TableSyntax
-  class TableParser
-    def separate_table_like_block(b)
-      ast = b.to_ast
-      inner_ast = ast.children[2]
+  module TableParser
+    module_function
+
+    #
+    # Separates table-like block of code from AST
+    #
+    def parse(block)
+      ast = block.to_ast
+      # produces sth. like:
+      # (block
+      #   (send ..)
+      #   (args)
+      #   (begin ..)
+      # )
+      inner_ast = ast.children[2] # pick up (begin..)
       if inner_ast.type == :send
         lines = [inner_ast]
       else
@@ -41,7 +52,7 @@ module TableSyntax
     end
 
     def eval_source_fragment(source_fragment)
-      instance = new  # for evaluate let methods.
+      instance = Object.new  # for evaluate let methods.
       if defined?(self.superclass::LetDefinitions)
         instance.extend self.superclass::LetDefinitions
       end
