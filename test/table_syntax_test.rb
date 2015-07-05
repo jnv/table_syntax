@@ -12,11 +12,11 @@ class TableSyntaxTest < Minitest::Test
       :a | :b
     end
 
-    assert_kind_of Enumerable, t
     t.each do |row|
       assert_equal :a, row.col1
       assert_equal :b, row.col2
     end
 
   end
+
 end
