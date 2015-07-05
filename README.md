@@ -1,8 +1,14 @@
 # TableSyntax
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/table_syntax`. To experiment with that code, run `bin/console` for an interactive prompt.
+TableSyntax was extracted from [RSpec::Parameterized](https://github.com/tomykaira/rspec-parameterized) by [@tomykaira](https://github.com/tomykaira).
 
-TODO: Delete this and the text above, and describe your gem
+It lets you build tables in plain Ruby with simple syntax, like:
+
+```ruby
+'value1' | 123     | 'lorem'
+'value2' | 456     | 'ipsum'
+:another | 'value' | [:dolor]
+```
 
 ## Installation
 
@@ -22,7 +28,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`TableSyntax` exposes method `.build`, which accepts column headers as arguments and block for table:
+
+```ruby
+require 'table_syntax'
+
+table = TableSyntax.build(:col1, :col2) do
+'value1' | 'value2'
+:val3    | :val4
+end
+```
+
+The resulting table can be iterated, where each row is available in a Struct:
+
+```ruby
+table.each do |row|
+  row.col1 # => 'value1'; :val3
+  row.col2 # => 'value2'; :val4
+end
+```
 
 ## Development
 
@@ -32,7 +56,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/table_syntax. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [jnv/table_syntax](https://github.com/jnv/table_syntax). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://contributor-covenant.org) code of conduct.
 
 
 ## License
