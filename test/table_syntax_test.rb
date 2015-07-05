@@ -1,4 +1,5 @@
-require 'test_helper'
+require "test_helper"
+require "table_syntax"
 
 class TableSyntaxTest < Minitest::Test
   def test_that_it_has_a_version_number
