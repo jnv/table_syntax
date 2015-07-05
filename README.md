@@ -1,5 +1,9 @@
 # TableSyntax
 
+[![Rubygems.org](https://img.shields.io/gem/v/table_syntax.svg?style=flat-square)](https://rubygems.org/gems/table_syntax)
+[![Build Status](https://img.shields.io/travis/jnv/table_syntax.svg?style=flat-square)](https://travis-ci.org/jnv/table_syntax)
+[![Code Climate](https://img.shields.io/codeclimate/github/jnv/table_syntax.svg?style=flat-square)](https://codeclimate.com/github/jnv/table_syntax)
+
 TableSyntax was extracted from [RSpec::Parameterized](https://github.com/tomykaira/rspec-parameterized) by [@tomykaira](https://github.com/tomykaira).
 
 It lets you build tables in plain Ruby with simple syntax, like:
@@ -34,8 +38,8 @@ Or install it yourself as:
 require 'table_syntax'
 
 table = TableSyntax.build(:col1, :col2) do
-'value1' | 'value2'
-:val3    | :val4
+  'value1' | 'value2'
+  :val3    | :val4
 end
 ```
 
@@ -56,7 +60,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [jnv/table_syntax](https://github.com/jnv/table_syntax). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [jnv/table_syntax](https://github.com/jnv/table_syntax). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
