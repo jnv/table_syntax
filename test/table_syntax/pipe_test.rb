@@ -35,7 +35,7 @@ module TableSyntax
 
     # XXX: In the implementation table is bound to its caller,
     #      thus we need to define individual method for each comparison.
-    types = [nil, lambda {}, true, false, 10, 3.14, BIGNUM, Object.new]
+    types = [:a, nil, lambda {}, true, false, 10, 3.14, BIGNUM, Object.new]
     types.permutation(2).each do |left, right|
       define_method("test_types_#{left.class}_#{right.class}") do
         t = left | right
