@@ -6,6 +6,7 @@ rvm:
   - ruby-head
   - jruby-head
 before_install: gem install bundler
+after_success: bundle exec codeclimate-test-reporter
 addons:
   code_climate:
     repo_token: 03c3223e71ee576214676d744a9ad4172a70b40cb2dfbcb492cdf31fdd9c2617
