@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.2
   - 2.1
-  - jruby-9.0.0.0.rc1
+  - jruby
   - ruby-head
   - jruby-head
 before_install: gem install bundler
@@ -12,6 +12,5 @@ addons:
     repo_token: 03c3223e71ee576214676d744a9ad4172a70b40cb2dfbcb492cdf31fdd9c2617
 matrix:
   allow_failures:
-    - rvm: jruby-9.0.0.0.rc1
     - rvm: ruby-head
     - rvm: jruby-head
